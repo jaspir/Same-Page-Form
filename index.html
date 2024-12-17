@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same Page Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <form id="form">
+        <div id="title">Same Page Title form</div> 
+        <br>
+        <div id="item1"><label for="name">Name: </label><input type="text" id="name" size="40"   placeholder="Jasper D. Salibay"></div>
+        <br>
+        <div id="item2"><label for="age">Age: </label><input type="text" id="age" size="40"placeholder="18"></div>
+        <br>
+        <div id="item3"><label for="school">School: </label><input type="text" id="school" size="40" placeholder="Polytechnic University of the Phillipines"></div>
+        <br>
+        <div id="item4"><label for="course">Course: </label><input type="text" id="course" placeholder="Diploma in Computer Engineering" size="40"></div>
+        <br>
+        <input type="button" value="Submit" onclick="displayresult()">
+    </form>
+
+    <div id="result" style="display:none;">
+        <h2>Form Submission Result</h2>
+        <p id="namedisplay"></p>
+        <p id="agedisplay"></p>
+        <p id="schooldisplay"></p>
+        <p id="coursedisplay"></p>
+    </div>
+
+    <script>
+        function displayresult() {
+            event.preventDefault();
+    
+            
+            const n = document.getElementById('name').value.trim();
+            const a = document.getElementById('age').value.trim();
+            const s = document.getElementById('school').value.trim();
+            const c = document.getElementById('course').value.trim();
+            
+            document.getElementById("namedisplay").innerText = "Name: " + n;
+            document.getElementById("agedisplay").innerText = "Age: " + a;
+            document.getElementById("schooldisplay").innerText = "School: " + s;
+            document.getElementById("coursedisplay").innerText = "Course: " + c;
+    
+    
+            document.getElementById("result").style.display = "block";
+            document.getElementById("sampleForm").style.display = "none";
+        }
+      </script>
+
+</body>
+</html>
